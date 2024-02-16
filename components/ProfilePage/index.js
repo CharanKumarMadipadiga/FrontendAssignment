@@ -1,9 +1,6 @@
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-
-import Cookies from 'js-cookie';
-
-import Data from '../Data.json';
+import Data from './Data.json'
 
 
 import './index.css'
@@ -11,17 +8,6 @@ import './index.css'
 
 const ProfilePage=(props)=> {
   const { avatar, name, bio} = Data;
-  const jwtToken=Cookies.get("jwt_token");
-  if(jwtToken===undefined) {
-    return <Redirect to="/login"/>
-  }
-
-  const onClickLogout=()=>{
-    Cookies.remove("jwt_token");
-    const {history}=props 
-    history.replace("/login")
-  }
-
 
   return (
     <nav className='nav-header'>
@@ -30,7 +16,7 @@ const ProfilePage=(props)=> {
                 <img src={avatar} alt="User Avatar" className='avatar' />
                 <h1 className='name'>{name}</h1>
                 <p className='bio'>{bio}</p>
-                <button type="button" className='logout-btn' onClick={onClickLogout}>logout</button>
+                <button type="button" className='logout-btn'>logout</button>
           </div>
           <div className="tabs">
                 <Link to="/profile/posts" className="post-link">Posts</Link>
