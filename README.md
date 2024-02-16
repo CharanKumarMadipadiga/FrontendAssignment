@@ -7,10 +7,10 @@ This is a frontend React application built to manage user profiles and posts. It
 To run this application locally, follow these steps:
 
 # Clone the repository:
-git clone <repository-url>
+git clone "repository-url"
 
 # Navigate to the project directory:
-cd <project-directory>
+cd "project-directory"
 
 # Install dependencies:
 npm install
